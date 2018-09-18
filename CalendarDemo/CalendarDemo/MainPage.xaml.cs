@@ -13,5 +13,20 @@ namespace CalendarDemo
 		{
 			InitializeComponent();
 		}
+
+	    private void HiddenCalendar_OnClicked(object sender, EventArgs e)
+	    {
+	        this.Navigation.PushAsync(new UsingDataTemplateStartingHidden());
+	    }
+
+	    private void DataTemplateButton_OnClicked(object sender, EventArgs e)
+	    {
+	        this.Navigation.PushAsync(new UsingDayCellDataTemplate());
+	    }
+
+	    private void AsyncDataHiddenCalendar_OnClicked(object sender, EventArgs e)
+	    {
+	        this.Navigation.PushAsync(new UsingHiddenCalendarWithAsyncData());
+        }
 	}
 }

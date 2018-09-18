@@ -12,10 +12,10 @@ namespace CalendarDemo
 
 	        var page = new MainPage()
 	        {
-	            BindingContext = new MainViewModel()
+	            
 	        };
 
-	        MainPage = page;
+	        MainPage = new NavigationPage(page);
 	    }
 
 	    protected override void OnStart ()

@@ -5,80 +5,30 @@
              x:Class="CalendarDemo.MainPage"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:sf="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
-             mc:Ignorable="d"
-             d:DataContext="{d:DesignInstance local:MainViewModel}">
+             mc:Ignorable="d">
 
-    <Grid Margin="20" BackgroundColor="LightGreen">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <StackLayout Margin="20">
+
+        <Label
+            Text="Very slow load performance of these pages on Android"></Label>
 
         <Button
-            Text="Show/Hide Calendar"
-            Command="{Binding ToggleCalendarCommand}"
-            Grid.Row="0"
+            Text="Show Calendar with DataTemplate"
+            Clicked="DataTemplateButton_OnClicked"
             HorizontalOptions="Center"></Button>
 
-        <Frame
-            Grid.Row="1"
-            IsVisible="{Binding IsCalendarVisible, Mode=OneWay, UpdateSourceEventName=PropertyChanged}"
-            BackgroundColor="Aqua">
+        <Button
+            Text="Show Same Calendar in hidden frame"
+            HorizontalOptions="Center"
+            Clicked="HiddenCalendar_OnClicked"></Button>
 
-            <sf:SfCalendar
-                BackgroundColor="White"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill"
-                HeightRequest="360"
-                IsVisible="True"
-                
-                EnableSwiping="True"
-                SelectionMode="SingleSelection"
-                ShowYearView="False"
-                ShowNavigationButtons="False"
-                ShowHeader="True"
-                ShowInlineEvents="False"
-                NavigationDirection="Horizontal"
-                ViewMode="MonthView"
-                
-                MaxDate="{Binding MaxScrollDate}"
-                MinDate="{Binding MinScrollDate}"
-                
-                CustomDayLabels="{Binding DayHeaders}"
-                FirstDayofWeek="{Binding FirstDayOfWeek}">
+        <Button
+            Text="Show Calendar in hidden frame &amp; async data"
+            HorizontalOptions="Center"
+            Clicked="AsyncDataHiddenCalendar_OnClicked"
+            ></Button>
 
-                <sf:SfCalendar.MonthViewSettings>
-                    <sf:MonthViewSettings
-                                    Margin="10,0"
-                                    CellGridOptions="None"
-                                    DateTextAlignment="Center"
-                                    BorderColor="Transparent"
-                                    CurrentMonthTextColor="Black"
-                                    DayHeaderTextColor="Black"
-                                    DisabledTextColor="GreenYellow"
-                                    DayLabelTextAlignment="Center"
-                                    WeekEndTextColor="DarkGray"
-                                    PreviousMonthTextColor="DarkGray"
-                                    SelectionShape="Circle"
-                                    DateSelectionColor="Transparent"
-                                    TodayTextColor="Red"
-                                    SelectedDayTextColor="Blue"
-                                    SelectionRadius="0">
-
-                        <sf:MonthViewSettings.MonthLabelSettings>
-                            <sf:MonthLabelSettings
-                                            DayFormat="d"
-                                            DateFormat="E" />
-                        </sf:MonthViewSettings.MonthLabelSettings>
-                    </sf:MonthViewSettings>
-                </sf:SfCalendar.MonthViewSettings>
-
-            </sf:SfCalendar>
-
-        </Frame>
-
-    </Grid>
+    </StackLayout>
 
 </ContentPage>
 

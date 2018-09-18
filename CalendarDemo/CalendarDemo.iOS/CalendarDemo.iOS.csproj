@@ -141,18 +141,6 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Syncfusion.Licensing">
-      <HintPath>..\..\libs\pcl\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfCalendar.iOS">
-      <HintPath>..\..\libs\ios\Syncfusion.SfCalendar.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfCalendar.XForms">
-      <HintPath>..\..\libs\ios\Syncfusion.SfCalendar.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfCalendar.XForms.iOS">
-      <HintPath>..\..\libs\ios\Syncfusion.SfCalendar.XForms.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -166,6 +154,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Licensing">
+      <Version>16.3.0.17-beta</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar">
+      <Version>16.3.0.17-beta</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar.IOS">
+      <Version>16.3.0.17-beta</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>3.0.0.561731</Version>
     </PackageReference>

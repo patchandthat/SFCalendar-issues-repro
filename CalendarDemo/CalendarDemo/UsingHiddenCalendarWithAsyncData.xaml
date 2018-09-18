@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xForms="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+             x:Class="CalendarDemo.UsingHiddenCalendarWithAsyncData">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Button
+                x:Name="ToggleButton"
+                Text="Show/Hide Calendar"
+                Clicked="ToggleCalendar"
+                IsEnabled="False"/>
+
+            <Frame
+                Margin="0"
+                Padding="0"
+                x:Name="CalendarFrame"
+                IsVisible="False">
+
+                <xForms:SfCalendar
+                Margin="0,5,0,5"
+                HeightRequest="340"
+                x:Name="Calendar"
+                EnableSwiping="True"
+                SelectionMode="SingleSelection"
+                ShowYearView="False"
+                ShowNavigationButtons="False"
+                ShowHeader="True"
+                ShowInlineEvents="False"
+                NavigationDirection="Horizontal"
+                ViewMode="MonthView">
+
+                    <xForms:SfCalendar.HeaderView>
+                        <Grid
+                        Margin="10,0">
+                            <Label
+                            Text="bhjkdfgsbhjk" 
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Center" 
+                            VerticalTextAlignment="Center" 
+                            HorizontalTextAlignment="Center"
+                            Margin="0"/>
+                        </Grid>
+                    </xForms:SfCalendar.HeaderView>
+
+                    <xForms:SfCalendar.MonthViewSettings>
+                        <xForms:MonthViewSettings
+                        
+                        DateTextAlignment="Center"
+
+                        CellGridOptions="None"
+                        BorderColor="Transparent"
+                        DayLabelTextAlignment="Center"
+                        SelectionShape="Circle"
+                        DateSelectionColor="Transparent"
+                        SelectionRadius="0">
+
+                            <xForms:MonthViewSettings.CellTemplate>
+                                <DataTemplate>
+
+                                    <AbsoluteLayout
+                                    BackgroundColor="White"
+                                    Margin="0"
+                                    Padding="0">
+
+                                        <Frame
+                                            IsVisible="{Binding HasEvents}"
+                                            BorderColor="DimGray"
+                                            BackgroundColor="DimGray"
+                                            HasShadow="False"
+                                            AbsoluteLayout.LayoutBounds="0.5,0.5,30,30"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            CornerRadius="15"
+                                            HeightRequest="30"
+                                            WidthRequest="30"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center">
+                                        </Frame>
+
+                                        <Frame
+                                            IsVisible="{Binding IsToday}"
+                                            BorderColor="CornflowerBlue"
+                                            BackgroundColor="Transparent"
+                                            HasShadow="False"
+                                            AbsoluteLayout.LayoutBounds="0.5,0.5,30,30"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            CornerRadius="15"
+                                            HeightRequest="30"
+                                            WidthRequest="30"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center">
+
+                                        </Frame>
+
+                                        <Frame
+                                            IsVisible="{Binding IsSelected}"
+                                            BorderColor="CornflowerBlue"
+                                            BackgroundColor="CornflowerBlue"
+                                            HasShadow="False"
+                                            AbsoluteLayout.LayoutBounds="0.5,0.5,30,30"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            CornerRadius="15"
+                                            HeightRequest="30"
+                                            WidthRequest="30"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center">
+
+                                        </Frame>
+
+                                        <Label
+                                            FontSize="13"
+                                            FontAttributes="None"
+                                            LineBreakMode="TailTruncation"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center"
+                                            AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                                            AbsoluteLayout.LayoutFlags="All"
+                                            Text="{Binding DayNumber}"
+                                            TextColor="Red" />
+                                    </AbsoluteLayout>
+
+
+                                </DataTemplate>
+                            </xForms:MonthViewSettings.CellTemplate>
+
+                            <xForms:MonthViewSettings.MonthLabelSettings>
+                                <xForms:MonthLabelSettings
+                                DayFormat="d"
+                                DateFormat="E"></xForms:MonthLabelSettings>
+                            </xForms:MonthViewSettings.MonthLabelSettings>
+
+                        </xForms:MonthViewSettings>
+                    </xForms:SfCalendar.MonthViewSettings>
+
+                </xForms:SfCalendar>
+
+            </Frame>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
